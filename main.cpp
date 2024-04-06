@@ -35,11 +35,20 @@ void err(string text_err){
 int main(int argc, char ** argv) {
     char* arg = "";
     if (argv[1] != arg) {
-        std::cout << argv[1] << " <- argument [ status: in proces... ]" << std::endl;
 
-    char* vec = argv[1];
-    string code,dot_of_file;
-    ifstream file (vec);
+        char* vec = argv[1];
+        string vec23 = argv[1], code,dot_of_file;
+        if (vec23 == "-h"){
+            cout << "To run cfl : ./cfl <file>.fhil\nTo run nerd : ./cfl <file>.nerd\nTo help (and this message) : ./cfl -h" << endl;
+            return 0;
+        }
+        else if (vec23 == "-repo"){
+            cout << "Cfl = https://github.com/fashka24/cfl\nNerd = https://github.com/fashka24/nerd\n";
+            return 0;
+        }else {
+            std::cout << argv[1] << " <- argument [ status: in proces... ]" << std::endl;
+        }
+        ifstream file (vec);
     {
         stringstream bud;
         if (file.is_open()){
